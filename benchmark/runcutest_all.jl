@@ -12,13 +12,8 @@ Random.seed!(1234)
 function runcutest(; today::String = string(today()))
 
   #pnames = readlines("paper-problems.list")
-  _pnames = CUTEst.select(
-    max_var = 300,
-    min_con = 1,
-    max_con = 300,
-    only_free_var = true,
-    objtype = 3:6,
-  )
+  _pnames =
+    CUTEst.select(max_var = 300, min_con = 1, max_con = 300, only_free_var = true, objtype = 3:6)
 
   #Remove all the problems ending by NE as Ipopt cannot handle them.
   pnamesNE = _pnames[findall(x -> occursin(r"NE\b", x), _pnames)]
@@ -67,10 +62,10 @@ function runcutest(; today::String = string(today()))
         ldlt_tol = √eps(),
         ldlt_r1 = √eps(),
         ldlt_r2 = -√eps(),
-#        atol_sub = atol -> 1e-1, # atol,
-#        rtol_sub = rtol -> 1e-1, # rtol,
-#        η_1 = 1.,
-#        η_update = 10.,
+        #        atol_sub = atol -> 1e-1, # atol,
+        #        rtol_sub = rtol -> 1e-1, # rtol,
+        #        η_1 = 1.,
+        #        η_update = 10.,
       ),
     :FPSFF =>
       nlp -> fps_solve(
@@ -97,10 +92,10 @@ function runcutest(; today::String = string(today()))
         # ne_etol = √eps(),
         # ne_itmax = 0,
         # ne_conlim = 1 / √eps(),
-#        atol_sub = atol -> 1e-1, # atol,
-#        rtol_sub = rtol -> 1e-1, # rtol,
-#        η_1 = 1.,
-#        η_update = 10.,
+        #        atol_sub = atol -> 1e-1, # atol,
+        #        rtol_sub = rtol -> 1e-1, # rtol,
+        #        η_1 = 1.,
+        #        η_update = 10.,
       ),
   )
 

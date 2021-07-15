@@ -68,10 +68,10 @@ function runcutest(; today::String = string(today()))
         ldlt_tol = √eps(),
         ldlt_r1 = √eps(),
         ldlt_r2 = -√eps(),
-#        atol_sub = atol -> 1e-1, # atol,
-#        rtol_sub = rtol -> 1e-1, # rtol,
-#        η_1 = 1.,
-#        η_update = 10.,
+        #        atol_sub = atol -> 1e-1, # atol,
+        #        rtol_sub = rtol -> 1e-1, # rtol,
+        #        η_1 = 1.,
+        #        η_update = 10.,
       ),
     :FPSFF =>
       nlp -> fps_solve(
@@ -98,10 +98,10 @@ function runcutest(; today::String = string(today()))
         # ne_etol = √eps(),
         # ne_itmax = 0,
         # ne_conlim = 1 / √eps(),
-#        atol_sub = atol -> 1e-1, # atol,
-#        rtol_sub = rtol -> 1e-1, # rtol,
-#        η_1 = 1.,
-#        η_update = 10.,
+        #        atol_sub = atol -> 1e-1, # atol,
+        #        rtol_sub = rtol -> 1e-1, # rtol,
+        #        η_1 = 1.,
+        #        η_update = 10.,
       ),
   )
 
